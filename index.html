@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kraken Ink | Digital & Physical Product Studio</title>
+  <meta name="description" content="Kraken Ink is a British Columbia-based product studio creating digital tools and physical goods through software, woodworking, laser work, and 3D printing." />
+  <meta property="og:title" content="Kraken Ink" />
+  <meta property="og:description" content="A British Columbia-based product studio creating digital and physical products across multiple mediums." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#07111f" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Kraken Ink home">
+      <img src="assets/kraken-mark.svg" alt="" class="brand-mark" />
+      <span>Kraken Ink</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">British Columbia Product Studio</p>
+        <h1>Digital tools. Physical craft. Built with intention.</h1>
+        <p class="hero-text">Kraken Ink creates polished digital products and beautifully made physical goods across software, woodworking, laser work, 3D printing, and creative fabrication.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:info@krakenink.ca">Contact Kraken Ink</a>
+          <a class="button button-secondary" href="#work">View Projects</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Kraken Ink product studio graphic">
+        <div class="orb"></div>
+        <img src="assets/kraken-mark.svg" alt="Kraken Ink abstract kraken mark" class="hero-mark" />
+        <div class="glass-card card-one">
+          <strong>Software</strong>
+          <span>iOS apps & digital tools</span>
+        </div>
+        <div class="glass-card card-two">
+          <strong>Fabrication</strong>
+          <span>Wood • Laser • 3D Print</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-shell split-section">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>A new studio exploring useful, beautiful products in multiple mediums.</h2>
+      </div>
+      <div class="section-text">
+        <p>Kraken Ink is based in British Columbia and was created to develop products that blend practical utility with thoughtful design. The studio’s work spans digital products, creative tools, and physical goods made through modern fabrication methods.</p>
+        <p>The first digital product, <strong>BlueClip</strong>, is the result of months of focused development and marks the beginning of Kraken Ink’s product roadmap.</p>
+      </div>
+    </section>
+
+    <section id="work" class="section-shell">
+      <div class="section-heading">
+        <p class="eyebrow">Work</p>
+        <h2>Current focus</h2>
+      </div>
+      <div class="work-grid">
+        <article class="work-card featured-card">
+          <div class="card-label">First digital product</div>
+          <h3>BlueClip</h3>
+          <p>A focused iOS product built to organize, track, and preserve important career information with clarity and privacy in mind.</p>
+          <span class="status">In development</span>
+        </article>
+        <article class="work-card">
+          <div class="card-label">Physical products</div>
+          <h3>Woodworking</h3>
+          <p>Exploring premium handmade pieces, functional objects, and small-batch creative products.</p>
+        </article>
+        <article class="work-card">
+          <div class="card-label">Creative fabrication</div>
+          <h3>Laser & 3D Printing</h3>
+          <p>Developing product ideas through laser work, prototyping, engraving, and 3D printed forms.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell values-section">
+      <div class="value-card">
+        <span>01</span>
+        <h3>Useful first</h3>
+        <p>Products are designed around real-world problems, not novelty alone.</p>
+      </div>
+      <div class="value-card">
+        <span>02</span>
+        <h3>Premium feel</h3>
+        <p>Digital or physical, the goal is a polished experience that feels intentional.</p>
+      </div>
+      <div class="value-card">
+        <span>03</span>
+        <h3>Built locally</h3>
+        <p>Rooted in British Columbia with a practical, hands-on approach to creation.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell contact-section">
+      <p class="eyebrow">Contact</p>
+      <h2>For product inquiries, collaborations, or business verification.</h2>
+      <a class="contact-link" href="mailto:info@krakenink.ca">info@krakenink.ca</a>
+      <p class="contact-note">Kraken Ink is a British Columbia-based company creating digital and physical products.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> Kraken Ink. All rights reserved.</span>
+    <a href="mailto:info@krakenink.ca">info@krakenink.ca</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
