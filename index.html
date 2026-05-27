@@ -1,127 +1,320 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kraken Ink | Digital & Physical Product Studio</title>
-  <meta name="description" content="Kraken Ink is a British Columbia-based product studio creating digital tools and physical goods through software, woodworking, laser work, and 3D printing." />
-  <meta property="og:title" content="Kraken Ink" />
-  <meta property="og:description" content="A British Columbia-based product studio creating digital and physical products across multiple mediums." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#07111f" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div>
-  <div class="ambient ambient-two"></div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kraken Ink</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Kraken Ink home">
-      <img src="assets/kraken-mark.svg" alt="" class="brand-mark" />
-      <span>Kraken Ink</span>
-    </a>
-    <nav aria-label="Primary navigation">
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: #05070b;
+      color: white;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top left, rgba(0,120,255,0.18), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(0,180,255,0.15), transparent 40%),
+        #05070b;
+      z-index: -2;
+    }
+
+    .grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: -1;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 80%);
+    }
+
+    header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 24px 8%;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      background: rgba(5,7,11,0.55);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.7);
+      margin-left: 24px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: white; }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 8%;
+    }
+
+    .hero-inner { max-width: 950px; }
+
+    .eyebrow {
+      color: #5bc0ff;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .brand-title {
+      font-size: clamp(4rem, 9vw, 7rem);
+      line-height: 1;
+      margin-bottom: 28px;
+      font-weight: 850;
+      letter-spacing: -0.06em;
+    }
+
+    .brand-title .kraken {
+      color: #ffffff;
+    }
+
+    .brand-title .ink {
+      color: #5bc0ff;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 28px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #ffffff, #7dd3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: rgba(255,255,255,0.72);
+      font-size: 1.2rem;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .primary {
+      background: linear-gradient(135deg, #0077ff, #00b7ff);
+      color: white;
+      box-shadow: 0 10px 35px rgba(0,140,255,0.3);
+    }
+
+    .secondary {
+      background: rgba(255,255,255,0.05);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    section { padding: 100px 8%; }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .section-sub {
+      max-width: 760px;
+      color: rgba(255,255,255,0.68);
+      margin-bottom: 50px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(91,192,255,0.3);
+    }
+
+    .card h3 {
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+    }
+
+    .card p { color: rgba(255,255,255,0.7); }
+
+    footer {
+      padding: 60px 8%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.55);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 700px) {
+      header { justify-content: center; }
+      nav a { margin: 0 10px; font-size: 0.9rem; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="grid"></div>
+
+  <header>
+    <nav>
       <a href="#about">About</a>
-      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy">
-        <p class="eyebrow">British Columbia Product Studio</p>
-        <h1>Digital tools. Physical craft. Built with intention.</h1>
-        <p class="hero-text">Kraken Ink creates polished digital products and beautifully made physical goods across software, woodworking, laser work, 3D printing, and creative fabrication.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="mailto:info@krakenink.ca">Contact Kraken Ink</a>
-          <a class="button button-secondary" href="#work">View Projects</a>
-        </div>
-      </div>
-      <div class="hero-card" aria-label="Kraken Ink product studio graphic">
-        <div class="orb"></div>
-        <img src="assets/kraken-mark.svg" alt="Kraken Ink abstract kraken mark" class="hero-mark" />
-        <div class="glass-card card-one">
-          <strong>Software</strong>
-          <span>iOS apps & digital tools</span>
-        </div>
-        <div class="glass-card card-two">
-          <strong>Fabrication</strong>
-          <span>Wood • Laser • 3D Print</span>
-        </div>
-      </div>
-    </section>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">British Columbia • Digital & Physical Creation</div>
 
-    <section id="about" class="section-shell split-section">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>A new studio exploring useful, beautiful products in multiple mediums.</h2>
+      <div class="brand-title">
+        <span class="kraken">Kraken</span>
+        <span class="ink">Ink</span>
       </div>
-      <div class="section-text">
-        <p>Kraken Ink is based in British Columbia and was created to develop products that blend practical utility with thoughtful design. The studio’s work spans digital products, creative tools, and physical goods made through modern fabrication methods.</p>
-        <p>The first digital product, <strong>BlueClip</strong>, is the result of months of focused development and marks the beginning of Kraken Ink’s product roadmap.</p>
-      </div>
-    </section>
 
-    <section id="work" class="section-shell">
-      <div class="section-heading">
-        <p class="eyebrow">Work</p>
-        <h2>Current focus</h2>
-      </div>
-      <div class="work-grid">
-        <article class="work-card featured-card">
-          <div class="card-label">First digital product</div>
-          <h3>BlueClip</h3>
-          <p>A focused iOS product built to organize, track, and preserve important career information with clarity and privacy in mind.</p>
-          <span class="status">In development</span>
-        </article>
-        <article class="work-card">
-          <div class="card-label">Physical products</div>
-          <h3>Woodworking</h3>
-          <p>Exploring premium handmade pieces, functional objects, and small-batch creative products.</p>
-        </article>
-        <article class="work-card">
-          <div class="card-label">Creative fabrication</div>
-          <h3>Laser & 3D Printing</h3>
-          <p>Developing product ideas through laser work, prototyping, engraving, and 3D printed forms.</p>
-        </article>
-      </div>
-    </section>
+      <h1>
+        Building <span class="gradient">beautiful products</span><br>
+        across digital and physical mediums.
+      </h1>
 
-    <section class="section-shell values-section">
-      <div class="value-card">
-        <span>01</span>
-        <h3>Useful first</h3>
-        <p>Products are designed around real-world problems, not novelty alone.</p>
-      </div>
-      <div class="value-card">
-        <span>02</span>
-        <h3>Premium feel</h3>
-        <p>Digital or physical, the goal is a polished experience that feels intentional.</p>
-      </div>
-      <div class="value-card">
-        <span>03</span>
-        <h3>Built locally</h3>
-        <p>Rooted in British Columbia with a practical, hands-on approach to creation.</p>
-      </div>
-    </section>
+      <p>
+        Kraken Ink is a Canadian creative technology company exploring premium software,
+        woodworking, laser engraving, 3D printing, and artistic fabrication.
+        Our first digital product, BlueClip, represents months of focused development
+        toward elegant professional tools.
+      </p>
 
-    <section id="contact" class="section-shell contact-section">
-      <p class="eyebrow">Contact</p>
-      <h2>For product inquiries, collaborations, or business verification.</h2>
-      <a class="contact-link" href="mailto:info@krakenink.ca">info@krakenink.ca</a>
-      <p class="contact-note">Kraken Ink is a British Columbia-based company creating digital and physical products.</p>
-    </section>
-  </main>
+      <div class="buttons">
+        <a class="btn primary" href="mailto:info@krakenink.ca">Contact Kraken Ink</a>
+        <a class="btn secondary" href="#projects">Explore Projects</a>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <span>© <span id="year"></span> Kraken Ink. All rights reserved.</span>
-    <a href="mailto:info@krakenink.ca">info@krakenink.ca</a>
+  <section id="about">
+    <h2 class="section-title">A modern creative workshop.</h2>
+    <p class="section-sub">
+      Kraken Ink was founded to merge craftsmanship and technology into meaningful products.
+      From software experiences to precision-built physical creations, the company explores
+      modern tools and materials with an emphasis on quality, originality, and visual design.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Digital Products</h3>
+        <p>
+          Software and mobile experiences designed with modern interfaces, performance,
+          and long-term usability in mind.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Creative Fabrication</h3>
+        <p>
+          Woodworking, laser engraving, CNC, and 3D printing used to create unique physical products.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Designed in BC</h3>
+        <p>
+          Based in beautiful British Columbia, Kraken Ink blends west coast creativity with technical execution.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Current Projects</h2>
+    <p class="section-sub">
+      The beginning of a growing ecosystem of digital and creative products.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>BlueClip</h3>
+        <p>
+          Kraken Ink's first major software product — built over months of development to provide elegant organizational and professional tooling.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Future Creative Series</h3>
+        <p>
+          Upcoming handcrafted and digitally fabricated products using laser, wood, resin, and additive manufacturing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Let’s build something remarkable.</h2>
+    <p class="section-sub">
+      Interested in collaboration, products, or future releases?
+      Reach out anytime.
+    </p>
+
+    <div class="buttons" style="justify-content:flex-start;">
+      <a class="btn primary" href="mailto:info@krakenink.ca">info@krakenink.ca</a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2026 Kraken Ink • British Columbia, Canada</div>
+    <div>Digital products • Creative fabrication • Design</div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
