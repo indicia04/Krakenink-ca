@@ -186,6 +186,19 @@
 
     .card p { color: rgba(255,255,255,0.7); }
 
+    a.card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card-cta {
+      display: inline-block;
+      margin-top: 16px;
+      color: #5bc0ff;
+      font-weight: 600;
+    }
+
     footer {
       padding: 60px 8%;
       border-top: 1px solid rgba(255,255,255,0.08);
@@ -284,14 +297,15 @@
     </p>
 
     <div class="cards">
-      <div class="card">
+      <a class="card" href="/blueclip/">
         <h3>
-  <span style="color:white;">Blue</span><span style="color:#5bc0ff;">Clip</span>
-</h3>
+          <span style="color:white;">Blue</span><span style="color:#5bc0ff;">Clip</span>
+        </h3>
         <p>
           Kraken Ink's first major software product — built over months of development to provide an elegant organizational and professional tool for law enforcement.
         </p>
-      </div>
+        <span class="card-cta">View BlueClip →</span>
+      </a>
 
       <div class="card">
         <h3>Future Creative Series</h3>
