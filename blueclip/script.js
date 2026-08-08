@@ -34,3 +34,20 @@
 
   targets.forEach(function (el) { observer.observe(el); });
 })();
+
+/* Hero screenshot rotation — ~3s hold + 0.8s cross-fade.
+   Skipped entirely under prefers-reduced-motion (first screenshot stays). */
+(function () {
+  "use strict";
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var rotator = document.querySelector(".hero-rotator");
+  if (!rotator) return;
+  var shots = rotator.querySelectorAll("img");
+  if (shots.length < 2) return;
+  var i = 0;
+  setInterval(function () {
+    shots[i].classList.remove("active");
+    i = (i + 1) % shots.length;
+    shots[i].classList.add("active");
+  }, 3800);
+})();

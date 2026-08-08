@@ -170,6 +170,20 @@ h1, h2, h3 { text-wrap: balance; }
 /* Screen height derives from the screenshot's own aspect ratio —
    no object-fit cropping, edges never get cut */
 .iphone-screen img { width: 100%; height: auto; }
+
+/* Hero rotator: screenshots stacked in one frame, calm cross-fade.
+   First image stays in flow (defines the frame height); the rest overlay. */
+.hero-rotator img {
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.hero-rotator img.active { opacity: 1; }
+.hero-rotator img:not(:first-child) {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+}
 /* Dynamic Island */
 .iphone::after {
   content: "";
@@ -500,6 +514,7 @@ h1, h2, h3 { text-wrap: balance; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .store-badge, .nav-cta { transition: none; }
+  .hero-rotator img { transition: none; }
 }
 
 /* ---------- Focus visibility ---------- */
