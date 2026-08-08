@@ -172,7 +172,11 @@ h1, h2, h3 { text-wrap: balance; }
 .iphone-screen img { width: 100%; height: auto; }
 
 /* Hero rotator: screenshots stacked in one frame, calm cross-fade.
-   First image stays in flow (defines the frame height); the rest overlay. */
+   First image stays in flow (defines the frame height); the rest overlay.
+   The screenshots carry their own Dynamic Island, so the frame's drawn
+   island is hidden here — two overlapping pills read as a smudge. */
+.hero-phone .iphone::after { display: none; }
+
 .hero-rotator img {
   opacity: 0;
   transition: opacity .8s ease;
