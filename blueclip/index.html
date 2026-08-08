@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BlueClip — The career log built for the badge.</title>
-<meta name="description" content="BlueClip is a private, on-device career log for police officers. Track shifts, overtime, investigations, court days, and wellness — all stored on your phone.">
+<meta name="description" content="BlueClip is a private, on-device career log and offline law library for police officers. Track shifts, overtime, investigations, and court days — and look up offences, fines, and full Act text with no signal.">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="BlueClip — The career log built for the badge.">
-<meta property="og:description" content="Private. On-device. Built for officers. Track shifts, overtime, investigations, court days, and wellness.">
+<meta property="og:description" content="Private. On-device. Built for officers. Your career log — and the law, in your pocket.">
 <meta property="og:image" content="assets/screenshot-dashboard.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BlueClip — The career log built for the badge.">
-<meta name="twitter:description" content="Private. On-device. Built for officers.">
+<meta name="twitter:description" content="Private. On-device. Built for officers. Your career log — and the law, in your pocket.">
 <meta name="twitter:image" content="assets/screenshot-dashboard.jpg">
 
 <link rel="icon" type="image/png" href="assets/blueclip-icon.png">
@@ -26,7 +26,7 @@
   "name": "BlueClip",
   "operatingSystem": "iOS",
   "applicationCategory": "ProductivityApplication",
-  "description": "A private, on-device career log for police officers. Shifts, overtime, investigations, court days, and wellness — stored on your phone.",
+  "description": "A private, on-device career log and offline law library for police officers. Shifts, overtime, investigations, court days, wellness — and the statutes you enforce, stored on your phone.",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
   "author": { "@type": "Organization", "name": "Kraken Ink Inc." }
 }
@@ -56,7 +56,7 @@
     <div class="hero-inner">
     <div class="hero-copy reveal">
       <h1>The career log<br>built for the badge.</h1>
-      <p class="hero-sub">Private. On-device. Built for officers.</p>
+      <p class="hero-sub">Private. On-device. Built for officers.<br>Now with the Library &mdash; the law, in your pocket.</p>
       <a class="store-badge" href="https://apps.apple.com/app/id6760573389" target="_blank" rel="noopener" aria-label="Download BlueClip on the App Store">
         <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="162" height="54">
       </a>
@@ -83,6 +83,30 @@
   <!-- ============ IDENTITY ============ -->
   <section class="statement" aria-label="What BlueClip is for">
     <p class="reveal">A modern take on bookmarking your police notebook with paperclips &mdash; now digital, secure, and always with you.</p>
+  </section>
+
+  <!-- ============ LIBRARY (NEW IN 2.0) ============ -->
+  <section class="more bg-white" id="library" aria-label="The Library">
+    <div class="more-inner reveal">
+      <h2>New in 2.0 &mdash; The Library.<br>The law, in your pocket.</h2>
+      <p class="more-sub">A complete legal reference beside your career log &mdash; the statutes you enforce, offline, one tap away. Browse offences with the fine, the points, and the verbatim text of the law. Ask by voice and hear the answer read back, hands-free.</p>
+      <ul class="more-grid">
+        <li>Offences with fine &amp; points</li>
+        <li>Verbatim Act text</li>
+        <li>Works fully offline</li>
+        <li>Ask by voice, hands-free</li>
+        <li>Favourites &amp; instant search</li>
+        <li>Offence-to-section links</li>
+        <li>Linked to your career clips</li>
+        <li>Updated over the air</li>
+        <li>Statute Catalogue</li>
+        <li>Request a Statute</li>
+        <li>Personal document shelf</li>
+        <li>Criminal Code, CDSA &amp; more</li>
+        <li class="more-tile">and growing&hellip;</li>
+      </ul>
+      <p class="fineprint">The Library is a reference tool, not an official source of law. Legislation is reproduced from official publications under their reproduction terms, with attribution in the app.</p>
+    </div>
   </section>
 
   <!-- ============ FEATURES ============ -->
@@ -278,6 +302,9 @@
           </ul>
           <p class="tier-group">Plus everything else</p>
           <ul>
+            <li>Law Library &mdash; Criminal Code, CDSA &amp; YCJA full text</li>
+            <li>Install 3 statutes from the Catalogue</li>
+            <li>Personal reference documents</li>
             <li>Interactive Calendar</li>
             <li>Location-Aware Contacts</li>
             <li>Wellness check-ins &amp; Insights</li>
@@ -297,6 +324,8 @@
             <p class="tier-price">$4.99<span>/mo</span></p>
           </div>
           <ul>
+            <li><strong>Full Law Library</strong> &mdash; install the entire Statute Catalogue</li>
+            <li><strong>Request a Statute</strong> &mdash; ask for what your beat needs</li>
             <li><strong>Paystub Audit</strong></li>
           </ul>
           <p class="tier-group">10 more clip types</p>
@@ -337,12 +366,17 @@
 
         <details>
           <summary>Is my data shared with, or accessible to, anyone?</summary>
-          <p>No &mdash; not your employer, not the developer, not anyone. BlueClip runs no servers of its own and has no account to create. Your data lives on your phone, and only syncs to your own private iCloud if you choose to turn it on.</p>
+          <p>No &mdash; not your employer, not the developer, not anyone. BlueClip runs no servers of its own and has no account to create. Your data lives on your phone, and only syncs to your own private iCloud if you choose to turn it on. The one thing the app downloads is the Library's statute files &mdash; public legislation fetched read-only from a public content host; that request carries none of your data.</p>
         </details>
 
         <details>
           <summary>Does it work offline?</summary>
-          <p>Everything you log, you can log offline &mdash; all clip types, your calendar, contacts, and wellness check-ins work with no connection. Your subscription works offline too: once you've subscribed or started a trial, access stays unlocked in the field, in a basement, or on a long shift with no signal. A few things do need the network: map tiles and pin geocoding for new addresses, and iCloud sync if you've turned it on. Maps and pins catch up the moment you reconnect.</p>
+          <p>Everything you log, you can log offline &mdash; all clip types, your calendar, contacts, and wellness check-ins work with no connection. Installed Library statutes are stored on your phone too, so offences, fines, and full Act text all read offline &mdash; exactly where you need them. Your subscription works offline too: once you've subscribed or started a trial, access stays unlocked in the field, in a basement, or on a long shift with no signal. A few things do need the network: installing or updating statutes, map tiles and pin geocoding for new addresses, and iCloud sync if you've turned it on. Everything catches up the moment you reconnect.</p>
+        </details>
+
+        <details>
+          <summary>Where does the Library's legal content come from?</summary>
+          <p>Straight from the official publishers &mdash; federal legislation from the Justice Laws consolidations and provincial legislation from the applicable King's Printer, reproduced under their reproduction terms with attribution shown in the app. Fines and sections are transcribed verbatim and human-reviewed, and statutes update over the air when the law changes. The Library is a reference tool, not an official source of law: always verify against the official statute before relying on a section.</p>
         </details>
 
         <details>
